@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Product Grid</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: Arial, sans-serif;
+      background-color: #f9fafb;
+      color: #111827;
+    }
+
+    h1 {
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 220px), 1fr)
+      );
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .product-card {
+      padding: 20px;
+      background-color: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .product-image {
+      display: grid;
+      place-items: center;
+      min-height: 140px;
+      background-color: #dbeafe;
+      border-radius: 8px;
+      font-size: 40px;
+    }
+
+    .product-card h2 {
+      font-size: 20px;
+      margin: 16px 0 8px;
+    }
+
+    .price {
+      color: #2563eb;
+      font-weight: bold;
+    }
+
+    .product-card button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      background-color: #2563eb;
+      color: #ffffff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Our Products</h1>
+
+  <main class="product-grid">
+    <article class="product-card">
+      <div class="product-image" aria-hidden="true">🎧</div>
+      <h2>Headphones</h2>
+      <p class="price">$25</p>
+      <button type="button">View Product</button>
+    </article>
+
+    <article class="product-card">
+      <div class="product-image" aria-hidden="true">⌚</div>
+      <h2>Smart Watch</h2>
+      <p class="price">$40</p>
+      <button type="button">View Product</button>
+    </article>
+
+    <article class="product-card">
+      <div class="product-image" aria-hidden="true">🎒</div>
+      <h2>Backpack</h2>
+      <p class="price">$30</p>
+      <button type="button">View Product</button>
+    </article>
+
+    <article class="product-card">
+      <div class="product-image" aria-hidden="true">📷</div>
+      <h2>Camera</h2>
+      <p class="price">$80</p>
+      <button type="button">View Product</button>
+    </article>
+
+    <article class="product-card">
+      <div class="product-image" aria-hidden="true">⌨️</div>
+      <h2>Keyboard</h2>
+      <p class="price">$35</p>
+      <button type="button">View Product</button>
+    </article>
+
+    <article class="product-card">
+      <div class="product-image" aria-hidden="true">🖱️</div>
+      <h2>Mouse</h2>
+      <p class="price">$15</p>
+      <button type="button">View Product</button>
+    </article>
+  </main>
+</body>
+</html>

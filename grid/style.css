@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+.main_container{
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+hr{
+  margin-block: 1rem;
+}
+
+/*----------  grid-template-columns ---------*/
+/* example-1 */
+
+/* .container-column{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+} */
+.container-column-01 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* best practice */
+  gap: 16px;
+  border: 1px solid black;
+  padding: 16px;
+  margin: 16px;
+} 
+.box01{
+    background-color: coral;
+    text-align: center;
+    padding: 16px;
+}
+/* Example 2: ভিন্ন প্রস্থের Column */
+.container-column-02 {
+            display: grid;
+            grid-template-columns: 200px 1fr 2fr;
+            gap: 16px;
+            border: 1px solid black;
+            padding: 16px;
+            margin: 16px;
+          }
+/* Example 3: Fixed Column Width */
+.container-column-03 {
+            display: grid;
+            grid-template-columns: 150px 250px 150px;
+            gap: 16px;
+            border: 1px solid black;
+            padding: 16px;
+            margin: 16px;
+          }
