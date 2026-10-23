@@ -13,32 +13,87 @@
         <h1>css-grid-complete-guide</h1>
 <hr>
         <!----------  grid-template-columns ---------->
-        <h2> grid-template-columns </h2>
+        <h2>🔹 grid-template-columns </h2>
         <h3>Example 1: তিনটি সমান Column</h3>
-        <div class="container-column-01">
-            <div class="box01"> 1fr </div>
-            <div class="box01"> 1fr </div>
-            <div class="box01"> 1fr </div>
+        <div class="container-template-column-01">
+            <div class="item"> 1fr </div>
+            <div class="item"> 1fr </div>
+            <div class="item"> 1fr </div>
         </div>
 
         <!-- Example 2: ভিন্ন প্রস্থের Column -->
          <h3>Example 2: ভিন্ন প্রস্থের Column</h3>
-        <div class="container-column-02">
-            <div class="box01">200px</div>
-            <div class="box01">1fr</div>
-            <div class="box01">2fr</div>
+        <div class="container-template-column-02">
+            <div class="item">200px</div>
+            <div class="item">1fr</div>
+            <div class="item">2fr</div>
         </div>
         <!-- Example 3: Fixed Column Width -->
          <h3>Example 3: Fixed Column Width</h3>
-         <div class="container-column-03">
-            <div class="box01">150px</div>
-            <div class="box01">250px</div>
-            <div class="box01">150px</div>
+         <div class="container-template-column-03">
+            <div class="item">150px</div>
+            <div class="item">250px</div>
+            <div class="item">150px</div>
         </div>
         <hr>
 <!-- -------grid-template-rows------ -->
- <h2>grid-template-rows</h2>
-
+ <h2>🔹 grid-template-rows</h2>
+ <div class="container-template-row-01">
+            <div class="item">first row 100px</div>
+            <div class="item">first row 100px</div>
+            <div class="item">second row 200px</div>
+            <div class="item">second row 200px</div>
+ </div>
+ <p>🔹 grid-template-rows property ব্যবহার করে grid-এর নির্দিষ্ট row-গুলোর উচ্চতা নির্ধারণ করা হয়।</p>
+ 
+ <div class="container-template-row-02">
+        <div class="item">minimum 100px</div>
+        <div class="item">minimum 100px</div>
+</div>
+<p>🔹 এখানে প্রতিটি implicit row-এর ন্যূনতম উচ্চতা 100px হবে। Content বেশি হলে row-এর উচ্চতা বাড়তে পারবে।</p>
+<hr>
+<!-- ----- grid-column------ -->
+<h2>🔹 grid-column</h2>
+<div class="container-column">
+    <div class="item">01</div>
+    <div class="item">02</div>
+    <div class="item">03</div>
+    <div class="item">04</div>
+    <div class="item">05</div>
+    <div class="item">06</div>
+</div>
+<p>🔹 এখানে প্রথম item column line 2 থেকে column line 4 পর্যন্ত থাকবে। তাই item-টি প্রথম দুটি column জুড়ে থাকবে।</p>
+<hr>
+<!-- grid-row -->
+ <h2>🔹 grid-row</h2>
+ <div class="container-row">
+    <div class="item">01</div>
+    <div class="item">02</div>
+    <div class="item">03</div>
+    <div class="item">04</div>
+    <div class="item">05</div>
+    <div class="item">06</div>
+ </div>
+<p>🔹 এখানে প্রথম item row line 1 থেকে row line 3 পর্যন্ত থাকবে। অর্থাৎ, এটি দুটি row জুড়ে থাকবে।</p>
+<hr>
+<!-- minmax() -->
+ <h2>🔹 minmax()</h2>
+ <p>🔹 minmax() function grid track-এর সর্বনিম্ন এবং সর্বোচ্চ আকার নির্ধারণ করে।</p>
+ <div class="container-minmax-01">
+    <div class="item">minimum 150px</div>
+    <div class="item">minimum 150px</div>
+    <div class="item">minimum 150px</div>
+    <div class="item">minimum 150px</div>
+ </div>
+ <p>🔹 Responsive grid তৈরির জন্য minmax()-এর সঙ্গে auto-fit ব্যবহার করা যায়।</p>
+ <div class="container-minmax-02">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+ </div>
+ <hr>
 
     </div>
 </body>
