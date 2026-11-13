@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mobile-first approach</title>
+</head>
+<style>
+    /* Mobile-first */
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.6;
+    }
+    .container {
+        width: 100%;
+        padding: 16px;
+    }
+    .flex{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+    .item{
+        width: min(100%, 220px);
+    }
+
+    /* Tablet and larger screens */
+    @media (min-width: 768px) {
+        .container {
+            width: 90%;
+            margin-inline: auto;
+        }
+    }
+
+    /* Desktop screens */
+    @media (min-width: 1024px) {
+        .container {
+            max-width: 1200px;
+        }
+    }
+    
+</style>
+<body>
+    <div class="container">
+        <div>
+            <h1>Mobile-First Approach</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae nisi temporibus laboriosam nostrum totam eveniet ipsa quam unde aperiam repellendus deleniti voluptate, atque beatae iste incidunt est consequatur quidem, expedita ea. </p>
+        </div>
+        <hr>
+        <div class="flex">
+            <div class="item">00 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet repellendus, debitis autem minima libero deserunt.</div>
+            <div class="item">01 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet repellendus, debitis autem minima libero deserunt.</div>
+            <div class="item">02 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet repellendus, debitis autem minima libero deserunt.</div>
+            <div class="item">03 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet repellendus, debitis autem minima libero deserunt.</div>
+            <div class="item">04 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet repellendus, debitis autem minima libero deserunt.</div>
+            <div class="item">05 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet repellendus, debitis autem minima libero deserunt.</div>
+        </div>
+    </div>
+</body>
+</html>

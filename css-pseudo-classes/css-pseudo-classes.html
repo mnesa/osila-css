@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        margin-block: 50px;
+        margin-inline-start: 50px;
+    }
+
+    .btn {
+        background-color: #2563eb;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+    /* hover */
+    .btn:hover {
+        background-color: #1d4ed8;
+    }
+    /* active */
+    .btn:active {
+            background-color: #a9b8e2;
+            transform: scale(0.97);
+    }
+    /* :focus */
+    input:focus {
+        outline: 2px solid #2563eb;
+        border-color: #2563eb;
+    }
+    /* :focus-visible */
+    button:focus-visible {
+        outline: 3px solid #2563eb;
+        outline-offset: 3px;
+    }
+    /* :visited */
+    a {
+        color: #2563eb;
+    }
+
+    a:visited {
+        color: #7c3aed;
+    }
+    /* :first-child */
+    .menu li:first-child {
+        color: #2563eb;
+        font-weight: bold;
+    }
+    /* :last-child */
+    .menu li:last-child {
+          color: #dc2626;
+          font-weight: bold;
+      }
+    /* :nth-child() */
+    .menu01 li:nth-child(2) {
+          color: brown;
+    }
+    .menu01 li:nth-child(3n) {
+          color: red;
+    }
+    .menu01 li:nth-child(n+4) {
+          color: green;
+    }
+    .menu02{
+        width: 400px;
+        padding: 15px;
+        text-align: center;
+    }
+    .menu02 li:nth-child(odd) {
+          background-color: #e0e7ff;
+    }
+    .menu02 li:nth-child(even) {
+          background-color: #f3f4f6;
+    }
+    /* :nth-of-type() */
+    .content p:nth-of-type(2) {
+            color: blue;
+    }
+    /* :not() */
+    .menu03 li:not(.active) {
+        color: #6b7280;
+    }
+    /* :checked */
+    .agree:checked {
+        accent-color: #2563eb;
+    }
+    #subscribe:checked + label {
+        color: #2563eb;
+        font-weight: bold;
+    } 
+    /* :disabled */
+    .btn02{
+        margin-block-start: 0.8rem;
+        margin-inline-start: 0.8rem;
+    }
+    .btn02:disabled {
+        background-color: #9ca3af;
+        color: white;
+        cursor: not-allowed;
+    }
+    .btn02:enabled {
+        background-color: chocolate;
+        color: white;
+    }
+    /* Form Validation Pseudo-Classes */
+    .form input{
+        padding: 5px;
+    }
+    .form input:required {
+        border-left: 5px solid #2563eb;
+    }
+    .form input:optional {
+        background-color: #dde9dd;
+    }
+    .form input:valid {
+        border-color: green;
+    }
+    .form input:invalid {
+        border-color: red;
+    }
+    .form input:placeholder-shown {
+        background-color: #ebf0f3;
+    }
+    
+</style>
+<body>
+    <h1>CSS Pseudo-Classes</h1>
+    <!-- :hover :active-->
+    <h2>🔹 :hover & :active</h2>
+    <button class="btn">Learn More</button>
+     
+    <!-- :focus -->
+    <h2>🔹 :focus</h2>
+    <input type="text" placeholder="Enter your name">
+    <!-- :focus-visible -->
+    <h2>🔹 :focus-visible</h2>
+    <button class="btn">Learn More</button>
+    <!-- :visited -->
+    <h2>🔹 :visited</h2>
+    <a href="https://www.osila.org">Visit Osila</a>
+    <!-- :first-child -->
+    <h2>🔹 :first-child</h2>
+    <h2>🔹 :last-child</h2>
+    <ul class="menu">
+        <li>Home</li>
+        <li>About</li>
+        <li>Services</li>
+        <li>Contact</li>
+    </ul>
+    <!-- :nth-child() -->
+    <h2>🔹 :nth-child()</h2>
+    <ul class="menu01">
+        <li>Home</li>
+        <li>About</li>
+        <li>Services</li>
+        <li>Blog</li>
+        <li>Products</li>
+        <li>Contact</li>
+    </ul>
+    <ul class="menu02">
+        <li>Home</li>
+        <li>About</li>
+        <li>Services</li>
+        <li>Blog</li>
+        <li>Products</li>
+        <li>Contact</li>
+    </ul>
+    <!-- :nth-of-type() -->
+    <h2>🔹 :nth-of-type()</h2>
+    <div class="content">
+        <h2>First Heading</h2>
+        <p>First paragraph</p>
+        <p>Second paragraph</p>
+        <h2>Second Heading</h2>
+        <p>Third paragraph</p>
+    </div>
+    <!-- :not() -->
+     <h2>🔹 :not()</h2>
+     <ul class="menu03">
+        <li>Home</li>
+        <li class="active">About</li>
+        <li>Services</li>
+        <li>Contact</li>
+    </ul>
+    <!-- :checked -->
+     <h2>🔹 :checked</h2>
+    <label>
+    <input type="checkbox" class="agree">
+        I agree to the terms
+    </label> <br>
+    <input type="checkbox" id="subscribe">
+    <label for="subscribe">Subscribe to newsletter</label>
+    <!-- :disabled -->
+     <h2>🔹 :disabled</h2>
+    <input type="text" placeholder="Your name"> <br>
+    <button class="btn02" disabled>Submit</button> 
+    <button class="btn02">Submit</button>
+    <!-- Form Validation Pseudo-Classes -->
+     <h2>🔹 Form Validation Pseudo-Classes</h2>
+     <div class="form">
+        <!-- optional, valid -->
+        <input type="name">
+        <!-- required, invalid -->
+         <!--কোনো input field-এ required ব্যবহার করলে, ব্যবহারকারী সেখানে কিছু লিখলে সেটি valid হয়। -->
+        <input type="address" required placeholder="Address">
+        <!-- placeholder-shown, valid -->
+        <input type="number" placeholder="Mobile">
+        <!-- 
+        :placeholder-shown ব্যবহার করলেও :optional pseudo-class কাজ করতে পারে, তবে দুটির কাজ আলাদা।
+        :placeholder-shown — input-এ placeholder দেখা যাচ্ছে কি না তা পরীক্ষা করে।
+        :optional — input field-এ required attribute নেই কি না তা পরীক্ষা করে।
+        -->
+     </div>
+    
+
+     
+
+</body>
+</html>
