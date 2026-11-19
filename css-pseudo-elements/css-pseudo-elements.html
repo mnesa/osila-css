@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+    <title>css-pseudo-elements</title>
+</head>
+<style>
+    body{
+        margin-inline: 2rem;
+        margin-block: 2rem;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        color: #222222;
+    }
+    h2{
+        margin-block-start: 3rem;
+    }
+    
+    /* ::before */
+    /* .title::before {
+        content: "★ ";
+        color: coral;
+    } */
+    .title::before {
+        content: "";
+        display: inline-block;
+        width: 40px;
+        height: 4px;
+        background-color: coral;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+    /* ::after */
+    /* .title02::after {
+        content: " →";
+        color: coral;
+    } */
+    .title02::after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 3px;
+        background-color: coral;
+        margin-top: 8px;
+    }
+    /* ::first-letter */
+    .intro::first-letter {
+        color: brown;
+        font-size: 40px;
+        font-weight: bold;
+    }
+    .intro02::first-letter {
+        float: left;
+        font-size: 3rem;
+        font-weight: bold;
+        color: brown;
+        margin-right: 8px;
+        line-height: 1;
+    }
+    /*  ::first-line */
+    .description::first-line {
+        color: #2563eb;
+        font-weight: bold;
+    }
+    /* ::selection */
+    ::selection {
+        background-color: #2563eb;
+        color: white;
+    }
+    .article p::selection {
+          background-color: #ccd6f8;
+          color: #111827;
+    } 
+    /* ::placeholder  */
+    input{
+        margin-block-end: 0.3rem;
+    }
+    input::placeholder {
+        color: #9ca3af;
+        font-size: 14px;
+        font-style: italic;
+    }
+    textarea::placeholder {
+        color: #6b7280;
+        font-style: italic;
+    }
+    /*  CSS content Property */
+    /* 1. Add Text */
+    .title03::before {
+        content: "Hello ";
+        color: crimson;
+    }
+    /* 2. Add a Symbol */
+    .title04::after {
+        content: " ★";
+        color: crimson;
+    }
+    /* 3. Empty Content */
+    .card{
+        width: 300px;
+        padding-block-end: 6px;
+        margin: 16px;
+        box-shadow: 10px 10px 10px #ccd6f8 ;
+    }
+     .card::before {
+        content: "";
+        display: block;
+        height: 4px;
+        background-color: #2563eb;
+    }
+    /* 4. Add a Quotation Mark */
+    blockquote{
+        box-shadow: 10px 10px 10px #ccd6f8 ;
+        width: 50%;
+        border: 1px solid #9ca3af;
+        padding: 5px;
+    }
+    blockquote::before {
+        content: "“";
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 80px;
+        color: #2563eb;
+    }
+    /* Decorative Shapes with Pseudo-Elements */
+    .card02 {
+        position: relative;
+        padding: 30px;
+        background-color: #f9fafb;
+        border-radius: 12px;
+        overflow: hidden;
+        width: 30%;
+        box-shadow: 10px 10px 10px #ccd6f8 ;
+    }
+
+    .card02::before {
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-color: #e0e7ff;
+        border-radius: 50%;
+        top: -35px;
+        right: -30px;
+    }
+    .card02::after {
+        content: "";
+        position: absolute;
+        width: 5px;
+        height: 50px;
+        background-color: #2563eb;
+        bottom: 20px;
+        left: 0;
+    }
+    /* Overlay Effects with Pseudo-Elements */
+    /* Image Overlay */
+    .image-card {
+        position: relative;
+        max-width: 400px;
+        overflow: hidden;
+        border-radius: 12px;
+    }
+
+    .image-card img {
+        width: 100%;
+        display: block;
+    }
+
+    .image-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            transparent,
+            rgba(0, 0, 0, 0.7)
+        );
+    }
+
+    .image-card h3 {
+        position: absolute;
+        bottom: 15px;
+        left: 20px;
+        color: white;
+        z-index: 1;
+    }
+    /* Hover Overlay Effect */
+    .image-card02 {
+        position: relative;
+        max-width: 400px;
+        overflow: hidden;
+        border-radius: 12px;
+        margin-block-start: 2rem;
+    }
+
+    .image-card02 img {
+        width: 100%;
+        display: block;
+    }
+    .image-card02::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            transparent,
+            rgba(0, 0, 0, 0.7)
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .image-card02:hover::before {
+        opacity: 1;
+    }
+    .image-card02 h3 {
+        position: absolute;
+        bottom: 15px;
+        left: 20px;
+        color: white;
+        z-index: 1;
+    }
+    /*  CSS Icons and Effects */
+    /* Checkmark Before List Items */
+    .features {
+        list-style: none;
+        padding: 0;
+    }
+
+    .features li::before {
+        content: "✓";
+        color: #16a34a;
+        font-weight: bold;
+        margin-right: 10px;
+    }
+    /* Arrow After a Button */
+    .learn-btn::after {
+        content: " →";
+        display: inline-block;
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+    }
+
+    .learn-btn:hover::after {
+        transform: translateX(5px);
+    }
+    
+
+    
+</style>
+<body>
+    <h1>CSS Pseudo-Elements</h1>
+    <!-- ::before -->
+    <h2>🔹 ::before</h2>
+    <h3 class="title">Welcome to Osila</h3>
+    <!-- ::after -->
+     <h2>🔹 ::after</h2>
+     <h3 class="title02">Learn HTML</h3>
+    <!-- ::first-letter -->
+     <h2>🔹 ::first-letter</h2>
+    <p class="intro">
+          CSS helps you create beautiful and responsive websites.
+    </p>
+    <p class="intro02">
+          CSS helps you create beautiful and responsive websites.
+    </p>
+    <!--  ::first-line -->
+    <h2>🔹 ::first-line</h2>
+    <p class="description">
+        Responsive web design helps websites work properly on different screen sizes. <br>
+        It makes the user experience better on mobile, tablet, and desktop devices.
+    </p>
+    <!-- ::selection -->
+     <h2>🔹 ::selection</h2>
+     <div class="article">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere cumque ipsam vero eos consequuntur deleniti doloribus velit architecto, non iusto?</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente mollitia beatae sit fuga necessitatibus voluptatibus ipsam fugiat consequatur impedit eius?</p>
+     </div>
+     <!--  ::placeholder -->
+    <h2>🔹  ::placeholder</h2>
+    <input type="text" placeholder="Enter your name"> <br>
+    <textarea rows="5" cols="30" placeholder="Write your message here..."></textarea><br>
+    <!--  CSS content Property -->
+      <h2>🔹 CSS content Property</h2>
+      <h3>1. Add Text</h3>
+      <h4 class="title03">Learn CSS</h4>
+      <h3>2. Add a Symbol</h3>
+      <h4 class="title04">Add a Symbol</h4>
+      <h3>3. Empty Content</h3>
+      <div class="card">
+        <h4>Empty Content</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, et!</p>
+      </div>
+      <h3>4. Add a Quotation Mark</h3>
+      <blockquote>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, ut!</blockquote>
+      <!-- Decorative Shapes with Pseudo-Elements -->
+       <h2>🔹 Decorative Shapes with Pseudo-Elements</h2>
+       <div class="card02">
+            <h2>Learn CSS</h2>
+            <p>Improve your frontend development skills.</p>
+        </div>
+     <!-- Overlay Effects with Pseudo-Elements -->
+      <h2>🔹 Overlay Effects with Pseudo-Elements</h2>
+      <!-- Image Overlay -->
+       <div class="image-card">
+            <img src="image.jpeg" alt="Food Fascination">
+            <h3>Explore Food</h3>
+        </div>
+        <!-- Hover Overlay Effect -->
+       <div class="image-card02">
+            <img src="image.jpeg" alt="Food Fascination">
+            <h3>Explore Food</h3>
+        </div>
+        <!-- CSS Icons and Effects  -->
+         <h2>🔹 CSS Icons and Effects</h2>
+         <!-- Checkmark Before List Items -->
+          <h3>Checkmark Before List Items</h3>
+        <ul class="features">
+            <li>Responsive Design</li>
+            <li>Clean Code</li>
+            <li>Easy to Use</li>
+        </ul>
+        <!-- Arrow After a Button -->
+         <h3>Arrow After a Button</h3>
+        <button class="learn-btn">Learn More</button>
+        
+
+<p>
+    <strong> ✔ Note: </strong>display: inline-block; — ::before বা ::after-কে width, height, padding ও margin দেওয়ার জন্য ব্যবহার করা হয়। <br>
+    position: absolute/relative; — কোনো element-এর নির্দিষ্ট অবস্থানে pseudo-element বসাতে ব্যবহার করা হয়।
+</p>
+
+
+     
+
+
+
+
+
+</body>
+</html>
