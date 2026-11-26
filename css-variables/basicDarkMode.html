@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Dark Mode</title>
+</head>
+<style>
+    :root {
+        --background: #ffffff;
+        --text: #111827;
+        --card-bg: #f9fafb;
+        --border: 1px solid #e6e8ec;
+        --border-radius: 10px;
+      }
+
+      /* .dark-theme {
+        --background: #111827;
+        --text: #f9fafb;
+        --card-bg: #1f2937;
+        --border: 2px solid #89a7c4;
+        --dark-family: Arial, Helvetica, sans-serif;
+      }
+      .dark-theme{
+        color: var(--text);
+        font-family: var(--dark-family);
+      } */
+
+      body {
+        background-color: var(--background);
+        color: var(--text);
+        border-radius: 10px;
+      }
+
+      .card {
+        background-color: var(--card-bg);
+        max-width: 350px;
+        margin: 0 auto;
+        padding-block: 1rem;
+        padding-inline: 1rem;
+        border: var(--border);
+        border-radius: var(--border-radius);
+      }
+
+</style>
+<body>
+    <div class="dark-theme">
+        <div class="card">
+          <h2>Basic Dark Mode</h2>
+          <p>This card uses dark theme colors.</p>
+        </div>
+      </div>
+</body>
+</html>

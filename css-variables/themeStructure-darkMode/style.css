@@ -1,0 +1,101 @@
+
+/* 1. Light Theme - Default */
+:root {
+  --color-primary: #2563EB;
+  --color-background: #F9FAFB;
+  --color-surface: #FFFFFF;
+  --color-text: #111827;
+  --color-muted: #6B7280;
+  --color-border: #E5E7EB;
+
+  --spacing: 24px;
+  --border-radius: 12px;
+
+  --font-family: Arial, sans-serif;
+}
+
+/* 2. Dark Theme */
+body:has(#theme-toggle:checked) {
+  --color-primary: #60A5FA;
+  --color-background: #111827;
+  --color-surface: #1F2937;
+  --color-text: #F9FAFB;
+  --color-muted: #D1D5DB;
+  --color-border: #374151;
+}
+
+/* 3. Basic Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background: var(--color-background);
+  color: var(--color-text);
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing);
+}
+
+/* 4. Theme Card */
+.theme-card {
+  width: 100%;
+  max-width: 450px;
+  padding: var(--spacing);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+}
+
+/* 5. Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing);
+}
+
+.header h1 {
+  color: var(--color-primary);
+  font-size: 24px;
+}
+
+/* 6. Theme Switch */
+.theme-switch {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* 7. Content */
+.theme-card h2 {
+  margin-bottom: 10px;
+}
+
+.theme-card p {
+  color: var(--color-muted);
+  line-height: 1.6;
+  margin-bottom: var(--spacing);
+}
+
+/* 8. Button */
+button {
+  background: var(--color-primary);
+  color: #FFFFFF;
+  border: none;
+  padding: 12px 20px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
